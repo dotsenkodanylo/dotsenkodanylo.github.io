@@ -1,0 +1,368 @@
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin-top: 5vw;
+  background: white;
+  font-family: "Helvetica Neue", 'Arial', Arial, sans-serif;
+  transition: all 0.5s ease-in-out;
+
+  .box {
+    background-color: whitesmoke;
+    position: fixed;
+    border-radius: 50%;
+  }
+
+  .moon {
+    z-index: -999;
+    display: block;
+    opacity: 0;
+    margin-left: -35px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    animation: myOrbit 400s linear infinite;
+  }
+
+  #stars-wrapper {
+    opacity: 0;
+  }
+
+  &.theme-dark {
+    background: #071329;
+    /**
+      * @TODO: Implement the moon as an independent SVG/PNG icon, and then configure the gradient below properly;
+     */
+    //background: linear-gradient(90deg, rgba(15,30,54,1) 0%, rgba(0,212,255,1) 100%);
+
+    * {
+      transition: all 0.5s ease-in-out;
+    }
+
+    .moon, #stars-wrapper {
+      opacity: 1;
+      transition: all 1.5s ease-in;
+    }
+
+    .switch_type1 {
+      background: #0e3e75 !important;
+    }
+
+    .bonus-view-mode-toggle-container {
+      background: #0f1e36;
+
+      #dark-mode-toggle {
+        filter: grayscale(0%);
+        animation: bounce-top 0.6s both;
+      }
+    }
+
+    h1, h2, h3, a, p, li {
+      color: white !important;
+    }
+
+    a:hover {
+      color: #67E6DC !important;
+    }
+  }
+
+  &.theme-colour {
+    background: rgb(220, 237, 193);
+
+    h1, h2, h3, a, p, li {
+      color: #E84342 !important;
+    }
+
+    .experience-block {
+      .experience-title {
+        color: red !important;
+      }
+    }
+
+    a:hover {
+      color: seagreen !important;
+    }
+
+    .bonus-view-mode-toggle-container {
+      background: rgba(255, 138, 149, 0.4);
+
+      #colour-mode-toggle {
+        filter: grayscale(0%);
+        animation: bounce-top 0.6s both;
+      }
+    }
+
+    .switch_type1 {
+      background: darkseagreen !important;
+    }
+  }
+
+  &.default-light {
+    background: white;
+
+    * {
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &.details-mode {
+    color: pink;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 6vh;
+    text-align: left;
+  }
+
+  .header-info {
+    display: flex;
+    flex-direction: column;
+    padding: 1vw 2vw;
+
+    h2, h3 {
+      display: inline;
+      margin: 0.2vw;
+      width: 100%;
+      color: #0e3e75;
+      font-weight: 400;
+      letter-spacing: 0.2rem;
+    }
+  }
+
+  .links {
+    display: block;
+    width: 35%;
+    padding: 2vw;
+
+    a {
+      margin: 0 2vw;
+      height: 1vw;
+      color: #2f2f2f;
+      display: inline-block;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: default;
+
+      &:hover {
+        transform: translate(0, -0.2vw);
+        color: orange;
+      }
+    }
+  }
+
+  #bio {
+    display: inline-block;
+    margin: 5% 0 0 15%;
+    width: 60%;
+    color: #620036;
+    line-height: 1.5em;
+    font-weight: 300;
+    font-size: 2em;
+  }
+
+  #resume-title {
+    text-align: left;
+    margin-top: 20vh;
+    margin-left: 15vh;
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  .experience-block {
+    display: block;
+    //background: rgba(20, 20, 220, 0.2);
+    width: 100%;
+
+    .experience-title {
+      float: left;
+      width: 26%;
+      padding: 1vw 2%;
+      color: dodgerblue;
+      // remove background afterwards.. ?
+      //background-color: rgba(255, 100, 100, 0.2);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .experience-description {
+      display: inline-block;
+      width: 50vw;
+      color: darkslategray;
+      padding: 1% 7% 1% 4%;
+      //background-color: rgba(250, 150, 0, 0.3);
+      font-weight: 500;
+
+      ul li {
+        line-height: 1.5em;
+        margin: 1vw;
+      }
+    }
+  }
+
+  .switch {
+    --uiSwitchSize: var(--switchSize, 64px);
+    --uiSwitchBgColor: var(--switchBgColor, #f1f1f1);
+    --uiSwitchBgColorActive: var(--switchBgColorActive, #4ed164);
+    --uiSwitchBorderColorActive: var(--switchBorderColorActive, #fff);
+    --uiSwitchBorderColorFocus: var(--switchBgColorFocus, #43b556);
+    --uiSwitchButtonBgColor: var(--switchButtonBgColor, #fff);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+
+  .bonus-view-mode-toggle-container {
+    float: right;
+    position: relative;
+    text-align: center;
+    top: 5vw;
+    width: 6%;
+    padding: 1vw 0;
+    color: dodgerblue;
+    border: 2px solid lightblue;
+    border-top-left-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+    animation: slide 0.7s ease-in forwards;
+
+    .view-mode-toggle-icon {
+      filter: grayscale(60%);
+      width: 30%;
+    }
+
+    .switch {
+      display: block;
+      margin: 0.5vw auto;
+      --switchSize: 50px;
+    }
+
+    .switch__label {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .switch__toggle {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .switch__label:before, .switch__label:after {
+      content: "";
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .switch__label:before {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      // non-selected background colour
+      background-color: rgb(255, 255, 255);
+      //background: rgba(255, 255, 255, 0.1)
+    }
+
+    .switch__label:after {
+      top: 50%;
+      z-index: 3;
+      transition: transform .4s cubic-bezier(0.44, -0.12, 0.07, 1.15);
+    }
+
+    .switch_type1 {
+      --uiSwitchBorderRadius: var(--switchBorderRadius, 60px);
+      width: var(--uiSwitchSize);
+      height: calc((var(--uiSwitchSize) / 2));
+      border-radius: var(--uiSwitchBorderRadius);
+      // selected background colour
+      background-color: pink;
+    }
+
+    .switch_type1 .switch__label {
+      border-radius: var(--uiSwitchBorderRadius);
+    }
+
+    .switch_type1 .switch__label:before {
+      border-radius: var(--uiSwitchBorderRadius);
+      transition: opacity .2s ease-out .1s, transform .2s ease-out .1s;
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .switch_type1 .switch__toggle:checked ~ .switch__label:before {
+      transform: scale(0);
+      opacity: .7;
+    }
+
+    .switch_type1 .switch__label:after {
+      width: calc(var(--uiSwitchSize) / 2);
+      height: calc(var(--uiSwitchSize) / 2);
+      transform: translate3d(0, -50%, 0);
+      background-color: var(--uiSwitchButtonBgColor);
+      border-radius: 100%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    }
+
+    .switch_type1 .switch__toggle:checked ~ .switch__label:after {
+      transform: translate3d(100%, -50%, 0);
+    }
+
+    .switch_type2 {
+      --switchBgColorActive: #e85c3f;
+      --switchBgColorFocus: #d54b2e;
+    }
+  }
+}
+
+@keyframes myOrbit {
+  0% {
+    transform: rotate(0deg) translateX(30vw) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(30vw) rotate(360deg);
+  }
+}
+
+@keyframes slide {
+  0% {
+    right: -300px
+  }
+  // hide and sneak animation:
+  /*}
+  10% {
+    right: -200px
+  }
+  30% {
+    right: -150px
+  }
+  60% {
+    right: -180px
+  }
+  80% {
+    right: -100px
+  }*/
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes bounce-top {
+  10% {
+    transform: translateY(-5x);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

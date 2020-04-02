@@ -1,14 +1,227 @@
 <!DOCTYPE html>
+
 <html>
 
-<head>
-</head>
+    <head>
+        <link href="stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+        <script src="scripts/scripts.js"></script>
+    </head>
 
-<body>
-<header>
-    <h1 class="body-header">Personal WebPage</h1>
-</header>
+    <body id="body-main" class="default-light basic-details-view">
 
-</body>
+        <header>
+
+            <section class="header-info">
+
+                <div class="header-info">
+
+                    <h2 class="header-info-name">Danylo Dotsenko</h2>
+
+                    <h3 class="header-info-subtitle">
+                        Full-Stack Engineer & Web Systems Developer
+                    </h3>
+
+                    <!--<details>
+
+                      <summary>Contact Information</summary>
+
+                      <span>Some information about me.</span>
+                    </details>-->
+
+                </div>
+
+            </section>
+
+            <section class="header-info links">
+
+                <a target="_blank" href="https://www.linkedin.com/in/dotsenko-danylo/">
+                    LinkedIn
+                </a>
+
+                <a target="_blank" href="https://github.com/dotsenkodanylo/">
+                    GitHub
+                </a>
+
+                <!--
+                Link to added file in github repo.
+                <a target="_blank" href="https://dotsenkodanylo.github.io/resume.pdf">
+                    Resume
+                </a>
+                -->
+
+                <a target="_blank" href="mailto:dotsenkodanylo@gmail.com">
+                    Email
+                </a>
+
+            </section>
+
+        </header>
+
+        <div class="moon">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <circle cx="100" cy="50" r="40" stroke="#071329" stroke-width="2" fill="white"/>
+                <circle cx="115" cy="50" r="30" stroke="#071329" stroke-width="2" fill="#071329"/>
+                <circle cx="130" cy="50" r="23" stroke="#071329" stroke-width="2" fill="#071329"/>
+            </svg>
+        </div>
+
+        <div>
+
+            <h2 id="bio">
+                Full Stack Developer and Multi-Tech Creative, always in search of
+                opportunities to think outside the box and explore collaborative
+                paradigms, while endlessly learning and adapting to shifting
+                technology standards along the way.
+            </h2>
+
+            <div class="bonus-view-mode-toggle-container">
+                <div>
+                    <img id="dark-mode-toggle" class="view-mode-toggle-icon" src="assets/moon-icon.png"
+                         alt="Dark-Mode Moon Icon"/>
+                    <label class="switch switch_type1" role="switch">
+                        <input type="checkbox" class="switch__toggle" name="theme-dark"
+                               onclick="updateViewMode(this, 'theme-dark')">
+                        <span class="switch__label"></span>
+                    </label>
+                </div>
+                <div>
+                    <img id="colour-mode-toggle" class="view-mode-toggle-icon" src="assets/paint-icon.png"
+                         alt="Colour-Mode Palette Icon"/>
+                    <label class="switch switch_type1" role="switch">
+                        <input type="checkbox" class="switch__toggle" name="theme-colour"
+                               onclick="updateViewMode(this, 'theme-colour')">
+                        <span class="switch__label"></span>
+                    </label>
+                </div>
+                <!--
+                /* @TODO: Implement the following as an optional 'detailed' content filter.*/
+                <div>
+                    <p>Detail Mode</p>
+                    <label class="switch switch_type1" role="switch">
+                        <input type="checkbox" class="switch__toggle" name="detail-mode"
+                               onclick="updateViewMode(this, 'detail-mode')">
+                        <span class="switch__label"></span>
+                    </label>
+                </div>-->
+            </div>
+
+            <h1 id="resume-title">
+                Resume & Experience
+            </h1>
+
+            <div class="experience-block">
+
+                <aside class="experience-title">
+
+                    <h2>Full Stack Developer</h2>
+
+                    <h3>BrainFx, Toronto, ON</h3>
+
+                    <p>05/2019 - 03/2019</p>
+
+                </aside>
+
+                <section class="experience-description">
+                    <p>
+                        Worked as a full stack developer in a tight startup company, focusing and leading on a variety
+                        of projects and major implementations, under highly-strict deadlines;
+                    </p>
+                    <ul>
+                        <li>Stack: AngularJS/Angular, SASS, NodeJS, MongoDB/NoSQL, Cordova, Ionic, Drupal 7/PHP</lI>
+                        <li>Tools: Android Studio, Gulp/Grunt/Yarn, Robo3, JetBrains Toolkit</lI>
+                        <li>
+                            Developing multi-level features and implementations for established therapy software used
+                            on Android tablets.
+                        </li>
+                        <li>
+                            Implemented full responsive rebuild for in-house application use on mobile and tablet
+                            devices due to previously statically styled/configured UI.
+                        </li>
+                        <li>
+                            Co-lead on major refactoring and re-architecting of project contracted by 3rd party company.
+                        </li>
+                        <li>
+                            Implemented and configured new features for CMS, used by therapist clients as a portal for a
+                            administering appointments, as well as viewing important medical data.
+                        </li>
+                        <li>
+                            Various administrative work, including coordinating and performing feature deployment with
+                            company Support team, clearing administrative work and documentation in Jira for all
+                            progressions, direct communication with clients regarding consistent changes to contracted
+                            project, etc.
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <div class="experience-block">
+
+                <aside class="experience-title">
+
+                    <h2>Research Assistant & Software/Hardware Developer</h2>
+
+                    <h3>NCART, Ryerson Univeristy, Toronto, ON</h3>
+
+                    <p>01/2018 - 03/2019</p>
+
+                </aside>
+
+                <section class="experience-description">
+                    <p>
+                        Involved in Ph.D run research and development lab at Ryerson University, and worked on variety
+                        of projects and research topics, surrounding robotics, dementia research, web development, and
+                        assisting with related courses;
+                    </p>
+
+                    <ul>
+                        <li>Stack: C++, HTMl/JS/CSS, PHP, MySQL,</li>
+                        <li>Tools: AnyLogic Simulation, Arduino, Wordpress</li>
+
+                        <li>
+                            Assisted with Ph.D candidate's research paper by researching and forming documentation on
+                            lost-person simulations, as well as piloting UAV units to perform simulations, as well as
+                            working with OPP on search and rescue mission tactics and search algorithms.
+                        </li>
+                        <li>
+                            Independently rebuilding entire web application from scratch for publication
+                            management and front-end for laboratory member documents and publications.
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <div class="experience-block">
+
+                <aside class="experience-title">
+
+                    <h2>Full Stack Developer</h2>
+
+                    <h3>StockRender, Toronto, ON</h3>
+
+                    <p>01/2018 - 03/2019</p>
+
+                </aside>
+
+                <section class="experience-description">
+                    <p>
+                        Worked in early-stage startup as a Full Stack Developer, responsible for fleshing out entirety
+                        of a basic full-stack vanilla application, utilizing basic public API to render stock
+                        information.
+                    </p>
+
+                    <ul>
+                        <li>Stack: HTML/JS/CSS, PHP, MySQL</li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <div id="stars-wrapper"></div>
+
+        </div>
+
+    </body>
 
 </html>

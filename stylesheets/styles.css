@@ -1,0 +1,355 @@
+/* line 1, ../sass/styles.scss */
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin-top: 5vw;
+  background: white;
+  font-family: "Helvetica Neue", 'Arial', Arial, sans-serif;
+  transition: all 0.5s ease-in-out;
+}
+/* line 10, ../sass/styles.scss */
+body .box {
+  background-color: whitesmoke;
+  position: fixed;
+  border-radius: 50%;
+}
+/* line 16, ../sass/styles.scss */
+body .moon {
+  z-index: -999;
+  display: block;
+  opacity: 0;
+  margin-left: -35px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  animation: myOrbit 400s linear infinite;
+}
+/* line 27, ../sass/styles.scss */
+body #stars-wrapper {
+  opacity: 0;
+}
+/* line 31, ../sass/styles.scss */
+body.theme-dark {
+  background: #071329;
+  /**
+    * @TODO: Implement the moon as an independent SVG/PNG icon, and then configure the gradient below properly;
+   */
+}
+/* line 38, ../sass/styles.scss */
+body.theme-dark * {
+  transition: all 0.5s ease-in-out;
+}
+/* line 42, ../sass/styles.scss */
+body.theme-dark .moon, body.theme-dark #stars-wrapper {
+  opacity: 1;
+  transition: all 1.5s ease-in;
+}
+/* line 47, ../sass/styles.scss */
+body.theme-dark .switch_type1 {
+  background: #0e3e75 !important;
+}
+/* line 51, ../sass/styles.scss */
+body.theme-dark .bonus-view-mode-toggle-container {
+  background: #0f1e36;
+}
+/* line 54, ../sass/styles.scss */
+body.theme-dark .bonus-view-mode-toggle-container #dark-mode-toggle {
+  filter: grayscale(0%);
+  animation: bounce-top 0.6s both;
+}
+/* line 60, ../sass/styles.scss */
+body.theme-dark h1, body.theme-dark h2, body.theme-dark h3, body.theme-dark a, body.theme-dark p, body.theme-dark li {
+  color: white !important;
+}
+/* line 64, ../sass/styles.scss */
+body.theme-dark a:hover {
+  color: #67E6DC !important;
+}
+/* line 69, ../sass/styles.scss */
+body.theme-colour {
+  background: #dcedc1;
+}
+/* line 72, ../sass/styles.scss */
+body.theme-colour h1, body.theme-colour h2, body.theme-colour h3, body.theme-colour a, body.theme-colour p, body.theme-colour li {
+  color: #E84342 !important;
+}
+/* line 77, ../sass/styles.scss */
+body.theme-colour .experience-block .experience-title {
+  color: red !important;
+}
+/* line 82, ../sass/styles.scss */
+body.theme-colour a:hover {
+  color: seagreen !important;
+}
+/* line 86, ../sass/styles.scss */
+body.theme-colour .bonus-view-mode-toggle-container {
+  background: rgba(255, 138, 149, 0.4);
+}
+/* line 89, ../sass/styles.scss */
+body.theme-colour .bonus-view-mode-toggle-container #colour-mode-toggle {
+  filter: grayscale(0%);
+  animation: bounce-top 0.6s both;
+}
+/* line 95, ../sass/styles.scss */
+body.theme-colour .switch_type1 {
+  background: darkseagreen !important;
+}
+/* line 100, ../sass/styles.scss */
+body.default-light {
+  background: white;
+}
+/* line 103, ../sass/styles.scss */
+body.default-light * {
+  transition: all 0.5s ease-in-out;
+}
+/* line 108, ../sass/styles.scss */
+body.details-mode {
+  color: pink;
+}
+/* line 112, ../sass/styles.scss */
+body header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 6vh;
+  text-align: left;
+}
+/* line 120, ../sass/styles.scss */
+body .header-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1vw 2vw;
+}
+/* line 125, ../sass/styles.scss */
+body .header-info h2, body .header-info h3 {
+  display: inline;
+  margin: 0.2vw;
+  width: 100%;
+  color: #0e3e75;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+}
+/* line 135, ../sass/styles.scss */
+body .links {
+  display: block;
+  width: 35%;
+  padding: 2vw;
+}
+/* line 140, ../sass/styles.scss */
+body .links a {
+  margin: 0 2vw;
+  height: 1vw;
+  color: #2f2f2f;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: default;
+}
+/* line 149, ../sass/styles.scss */
+body .links a:hover {
+  transform: translate(0, -0.2vw);
+  color: orange;
+}
+/* line 156, ../sass/styles.scss */
+body #bio {
+  display: inline-block;
+  margin: 5% 0 0 15%;
+  width: 60%;
+  color: #620036;
+  line-height: 1.5em;
+  font-weight: 300;
+  font-size: 2em;
+}
+/* line 166, ../sass/styles.scss */
+body #resume-title {
+  text-align: left;
+  margin-top: 20vh;
+  margin-left: 15vh;
+  font-size: 2rem;
+  font-weight: 300;
+}
+/* line 174, ../sass/styles.scss */
+body .experience-block {
+  display: block;
+  width: 100%;
+}
+/* line 179, ../sass/styles.scss */
+body .experience-block .experience-title {
+  float: left;
+  width: 26%;
+  padding: 1vw 2%;
+  color: dodgerblue;
+  font-weight: 500;
+  text-align: right;
+}
+/* line 190, ../sass/styles.scss */
+body .experience-block .experience-description {
+  display: inline-block;
+  width: 50vw;
+  color: darkslategray;
+  padding: 1% 7% 1% 4%;
+  font-weight: 500;
+}
+/* line 198, ../sass/styles.scss */
+body .experience-block .experience-description ul li {
+  line-height: 1.5em;
+  margin: 1vw;
+}
+/* line 205, ../sass/styles.scss */
+body .switch {
+  --uiSwitchSize: var(--switchSize, 64px);
+  --uiSwitchBgColor: var(--switchBgColor, #f1f1f1);
+  --uiSwitchBgColorActive: var(--switchBgColorActive, #4ed164);
+  --uiSwitchBorderColorActive: var(--switchBorderColorActive, #fff);
+  --uiSwitchBorderColorFocus: var(--switchBgColorFocus, #43b556);
+  --uiSwitchButtonBgColor: var(--switchButtonBgColor, #fff);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+/* line 219, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container {
+  float: right;
+  position: relative;
+  text-align: center;
+  top: 5vw;
+  width: 6%;
+  padding: 1vw 0;
+  color: dodgerblue;
+  border: 2px solid lightblue;
+  border-top-left-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+  animation: slide 0.7s ease-in forwards;
+}
+/* line 232, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .view-mode-toggle-icon {
+  filter: grayscale(60%);
+  width: 30%;
+}
+/* line 237, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch {
+  display: block;
+  margin: 0.5vw auto;
+  --switchSize: 50px;
+}
+/* line 243, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch__label {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 249, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch__toggle {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 258, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch__label:before, body .bonus-view-mode-toggle-container .switch__label:after {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 266, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch__label:before {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: white;
+}
+/* line 275, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch__label:after {
+  top: 50%;
+  z-index: 3;
+  transition: transform 0.4s cubic-bezier(0.44, -0.12, 0.07, 1.15);
+}
+/* line 281, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch_type1 {
+  --uiSwitchBorderRadius: var(--switchBorderRadius, 60px);
+  width: var(--uiSwitchSize);
+  height: calc((var(--uiSwitchSize) / 2));
+  border-radius: var(--uiSwitchBorderRadius);
+  background-color: pink;
+}
+/* line 290, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch_type1 .switch__label {
+  border-radius: var(--uiSwitchBorderRadius);
+}
+/* line 294, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch_type1 .switch__label:before {
+  border-radius: var(--uiSwitchBorderRadius);
+  transition: opacity .2s ease-out .1s, transform .2s ease-out .1s;
+  transform: scale(1);
+  opacity: 1;
+}
+/* line 301, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch_type1 .switch__toggle:checked ~ .switch__label:before {
+  transform: scale(0);
+  opacity: .7;
+}
+/* line 306, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch_type1 .switch__label:after {
+  width: calc(var(--uiSwitchSize) / 2);
+  height: calc(var(--uiSwitchSize) / 2);
+  transform: translate3d(0, -50%, 0);
+  background-color: var(--uiSwitchButtonBgColor);
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+/* line 315, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch_type1 .switch__toggle:checked ~ .switch__label:after {
+  transform: translate3d(100%, -50%, 0);
+}
+/* line 319, ../sass/styles.scss */
+body .bonus-view-mode-toggle-container .switch_type2 {
+  --switchBgColorActive: #e85c3f;
+  --switchBgColorFocus: #d54b2e;
+}
+
+@keyframes myOrbit {
+  0% {
+    transform: rotate(0deg) translateX(30vw) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(30vw) rotate(360deg);
+  }
+}
+@keyframes slide {
+  0% {
+    right: -300px;
+  }
+  /*}
+  10% {
+    right: -200px
+  }
+  30% {
+    right: -150px
+  }
+  60% {
+    right: -180px
+  }
+  80% {
+    right: -100px
+  }*/
+  100% {
+    right: 0;
+  }
+}
+@keyframes bounce-top {
+  10% {
+    transform: translateY(-5x);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
