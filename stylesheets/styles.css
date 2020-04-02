@@ -221,7 +221,6 @@ body .bonus-view-mode-toggle-container {
   border: 2px solid lightblue;
   border-top-left-radius: 1vw;
   border-bottom-left-radius: 1vw;
-  animation: slide 0.7s ease-in forwards;
 }
 /* line 232, ../sass/styles.scss */
 body .bonus-view-mode-toggle-container .view-mode-toggle-icon {
